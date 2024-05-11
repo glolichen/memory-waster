@@ -8,16 +8,12 @@ int main() {
     int wasteAmt;
     std::cin >> wasteAmt;
 
-    std::cout << "Wasted   mB";
-    for (ull i = 1; i <= wasteAmt * 1024; i++) {
-        ull* number = new ull[128];
-        if (i % 1024 == 0)
-            std::cout << "Wasting " << (i / 1024) << " mB\n";
-    }
+    ull size = 131072 * wasteAmt;
+    ull *waste = new ull[size];
 
-    std::cout << "\nWasting " << wasteAmt << " mB, Press Ctrl+C to stop" << std::endl;
+    std::cout << "Wasting " << wasteAmt << " mB, Press Ctrl+C to stop" << std::endl;
 
-    while (true);
+    while (true) for (int i = 0; i < size; i++) waste[i]++;
 
     return 0;
 }
